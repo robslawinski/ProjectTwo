@@ -7,8 +7,15 @@ PHP assignment 1</h1>
 <?php
 	use is218\section101\utils as Everything;
 	
-	require_once('HTMLUtils.php');
-	require_once('FormSanitize.php');
+	//require_once('HTMLUtils.php');
+	//require_once('FormSanitize.php');
+	
+
+	function __autoload($class)
+	{
+		$parts = explode('\\', $class);
+		require end($parts) . '.php';
+	}
 	
 	$cars = array
 	(
